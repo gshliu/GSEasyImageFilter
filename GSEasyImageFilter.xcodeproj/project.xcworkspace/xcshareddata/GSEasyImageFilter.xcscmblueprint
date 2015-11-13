@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "832CC075-8F84-47E7-B57A-C7B07A163459",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : "GSEasyImageFilter\/GSEasyImageFilter\/UIImage-Extensions\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GSEasyImageFilter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GSEasyImageFilter.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn.duapp.com\/appid9kgedf0yca",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897"
+    }
+  ]
+}

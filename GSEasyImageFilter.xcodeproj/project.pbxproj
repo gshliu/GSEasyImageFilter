@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		6FC4CCA21BF48253001F3176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCA11BF48253001F3176 /* main.m */; };
 		6FC4CCA51BF48253001F3176 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCA41BF48253001F3176 /* AppDelegate.m */; };
-		6FC4CCA81BF48253001F3176 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCA71BF48253001F3176 /* ViewController.m */; };
-		6FC4CCAB1BF48253001F3176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4CCA91BF48253001F3176 /* Main.storyboard */; };
 		6FC4CCAD1BF48253001F3176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4CCAC1BF48253001F3176 /* Assets.xcassets */; };
 		6FC4CCB01BF48253001F3176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4CCAE1BF48253001F3176 /* LaunchScreen.storyboard */; };
+		6FC4CCBB1BF482EE001F3176 /* ImageFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCB81BF482EE001F3176 /* ImageFilterCollectionViewCell.m */; };
+		6FC4CCBC1BF482EE001F3176 /* ImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCBA1BF482EE001F3176 /* ImageFilterViewController.m */; };
+		6FC4CCC81BF48305001F3176 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCBF1BF48305001F3176 /* UIImage+Alpha.m */; };
+		6FC4CCC91BF48305001F3176 /* UIImage+Cut.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCC11BF48305001F3176 /* UIImage+Cut.m */; };
+		6FC4CCCA1BF48305001F3176 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCC31BF48305001F3176 /* UIImage+Resize.m */; };
+		6FC4CCCB1BF48305001F3176 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCC51BF48305001F3176 /* UIImage+RoundedCorner.m */; };
+		6FC4CCCC1BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4CCC71BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.m */; };
+		6FC4CCCE1BF4838A001F3176 /* testImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4CCCD1BF4838A001F3176 /* testImage.jpg */; };
+		6FD027621BF5829B00406B2A /* test_h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FD027611BF5829B00406B2A /* test_h.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +27,25 @@
 		6FC4CCA11BF48253001F3176 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FC4CCA31BF48253001F3176 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6FC4CCA41BF48253001F3176 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6FC4CCA61BF48253001F3176 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6FC4CCA71BF48253001F3176 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6FC4CCAA1BF48253001F3176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FC4CCAC1BF48253001F3176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FC4CCAF1BF48253001F3176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FC4CCB11BF48253001F3176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FC4CCB71BF482EE001F3176 /* ImageFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterCollectionViewCell.h; sourceTree = "<group>"; };
+		6FC4CCB81BF482EE001F3176 /* ImageFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterCollectionViewCell.m; sourceTree = "<group>"; };
+		6FC4CCB91BF482EE001F3176 /* ImageFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterViewController.h; sourceTree = "<group>"; };
+		6FC4CCBA1BF482EE001F3176 /* ImageFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterViewController.m; sourceTree = "<group>"; };
+		6FC4CCBE1BF48305001F3176 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		6FC4CCBF1BF48305001F3176 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		6FC4CCC01BF48305001F3176 /* UIImage+Cut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cut.h"; sourceTree = "<group>"; };
+		6FC4CCC11BF48305001F3176 /* UIImage+Cut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cut.m"; sourceTree = "<group>"; };
+		6FC4CCC21BF48305001F3176 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		6FC4CCC31BF48305001F3176 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		6FC4CCC41BF48305001F3176 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		6FC4CCC51BF48305001F3176 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		6FC4CCC61BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
+		6FC4CCC71BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
+		6FC4CCCD1BF4838A001F3176 /* testImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImage.jpg; sourceTree = "<group>"; };
+		6FD027611BF5829B00406B2A /* test_h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_h.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +78,14 @@
 		6FC4CC9F1BF48253001F3176 /* GSEasyImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				6FC4CCCF1BF48391001F3176 /* Resources */,
+				6FC4CCBD1BF48305001F3176 /* UIImage-Extensions */,
+				6FC4CCB71BF482EE001F3176 /* ImageFilterCollectionViewCell.h */,
+				6FC4CCB81BF482EE001F3176 /* ImageFilterCollectionViewCell.m */,
+				6FC4CCB91BF482EE001F3176 /* ImageFilterViewController.h */,
+				6FC4CCBA1BF482EE001F3176 /* ImageFilterViewController.m */,
 				6FC4CCA31BF48253001F3176 /* AppDelegate.h */,
 				6FC4CCA41BF48253001F3176 /* AppDelegate.m */,
-				6FC4CCA61BF48253001F3176 /* ViewController.h */,
-				6FC4CCA71BF48253001F3176 /* ViewController.m */,
-				6FC4CCA91BF48253001F3176 /* Main.storyboard */,
 				6FC4CCAC1BF48253001F3176 /* Assets.xcassets */,
 				6FC4CCAE1BF48253001F3176 /* LaunchScreen.storyboard */,
 				6FC4CCB11BF48253001F3176 /* Info.plist */,
@@ -77,6 +100,32 @@
 				6FC4CCA11BF48253001F3176 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FC4CCBD1BF48305001F3176 /* UIImage-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6FC4CCBE1BF48305001F3176 /* UIImage+Alpha.h */,
+				6FC4CCBF1BF48305001F3176 /* UIImage+Alpha.m */,
+				6FC4CCC01BF48305001F3176 /* UIImage+Cut.h */,
+				6FC4CCC11BF48305001F3176 /* UIImage+Cut.m */,
+				6FC4CCC21BF48305001F3176 /* UIImage+Resize.h */,
+				6FC4CCC31BF48305001F3176 /* UIImage+Resize.m */,
+				6FC4CCC41BF48305001F3176 /* UIImage+RoundedCorner.h */,
+				6FC4CCC51BF48305001F3176 /* UIImage+RoundedCorner.m */,
+				6FC4CCC61BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.h */,
+				6FC4CCC71BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.m */,
+			);
+			path = "UIImage-Extensions";
+			sourceTree = "<group>";
+		};
+		6FC4CCCF1BF48391001F3176 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6FD027611BF5829B00406B2A /* test_h.jpg */,
+				6FC4CCCD1BF4838A001F3176 /* testImage.jpg */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD027621BF5829B00406B2A /* test_h.jpg in Resources */,
+				6FC4CCCE1BF4838A001F3176 /* testImage.jpg in Resources */,
 				6FC4CCB01BF48253001F3176 /* LaunchScreen.storyboard in Resources */,
 				6FC4CCAD1BF48253001F3176 /* Assets.xcassets in Resources */,
-				6FC4CCAB1BF48253001F3176 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,23 +199,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FC4CCA81BF48253001F3176 /* ViewController.m in Sources */,
+				6FC4CCCB1BF48305001F3176 /* UIImage+RoundedCorner.m in Sources */,
+				6FC4CCC91BF48305001F3176 /* UIImage+Cut.m in Sources */,
 				6FC4CCA51BF48253001F3176 /* AppDelegate.m in Sources */,
 				6FC4CCA21BF48253001F3176 /* main.m in Sources */,
+				6FC4CCBC1BF482EE001F3176 /* ImageFilterViewController.m in Sources */,
+				6FC4CCC81BF48305001F3176 /* UIImage+Alpha.m in Sources */,
+				6FC4CCBB1BF482EE001F3176 /* ImageFilterCollectionViewCell.m in Sources */,
+				6FC4CCCA1BF48305001F3176 /* UIImage+Resize.m in Sources */,
+				6FC4CCCC1BF48305001F3176 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6FC4CCA91BF48253001F3176 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6FC4CCAA1BF48253001F3176 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6FC4CCAE1BF48253001F3176 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -262,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GSEasyImageFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GSEasyImageFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GSEasyImageFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GSEasyImageFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +348,7 @@
 				6FC4CCB61BF48253001F3176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
