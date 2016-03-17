@@ -6,6 +6,7 @@
 //
 //
 
+
 #import "ImageFilterViewController.h"
 #import "ImageFilterCollectionViewCell.h"
 #import "UIImage+Resize.h"
@@ -17,32 +18,36 @@
 #define SCREEN_SCALE   ([UIScreen mainScreen].scale)
 
 @interface ImageFilterViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GLKViewDelegate> {
-
+    
     UICollectionView *_collectionView;
     GLKView *_largeImageView;
     UIImage *_originalImage;
     CIContext *_context;
     CIImage * _outputImage;
+    EAGLContext *_eaglContext;
 }
 
-@property (nonatomic, strong)NSMutableArray *collectionViewArray;
+@property (nonatomic, strong) NSMutableArray *collectionViewArray;
 
-@property (nonatomic, strong)NSMutableArray *imageArray;
+@property (nonatomic, strong) NSMutableArray *imageArray;
 
 @end
 
 @implementation ImageFilterViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initData];
+    
     [self initView];
-    [self performSelector:@selector(initData) withObject:nil afterDelay:0.5];
     // Do any additional setup after loading the view.
 }
 
 - (void)initData {
     _imageArray = [[NSMutableArray alloc]init];
-
+    
     _collectionViewArray = [NSMutableArray arrayWithArray:@[@{@"filter":@"CIColorControls",@"name":@"原图"},
                                                             @{@"filter":@"CIPhotoEffectMono", @"name":@"单色"},
                                                             @{@"filter":@"CIPhotoEffectTonal", @"name":@"色调"},
@@ -53,17 +58,27 @@
                                                             @{@"filter":@"CIPhotoEffectTransfer", @"name":@"岁月"},
                                                             @{@"filter":@"CIPhotoEffectInstant", @"name":@"怀旧"}]];
     
-    [_collectionView reloadData];
-
-
+    
 }
 
 - (void)initView {
     
-    self.view.backgroundColor = [UIColor whiteColor];
-//    _originalImage = [UIImage imageNamed:@"testImage.jpg"];
+    self.view.backgroundColor = [UIColor blackColor];
     _originalImage = [UIImage imageNamed:@"test_h.jpg"];
+    
+    CIImage *ciImage = [[CIImage alloc] initWithImage:_originalImage];
+    CIFilter *filter = [CIFilter filterWithName:[_collectionViewArray objectAtIndex:0][@"filter"] keysAndValues:kCIInputImageKey, ciImage, nil];
+    _eaglContext = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    _context = [CIContext contextWithEAGLContext:_eaglContext options:@{kCIContextWorkingColorSpace:[NSNull null]}];
+    _outputImage = [filter outputImage];
+    
+    _largeImageView = [[GLKView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-160-64-10) context:_eaglContext];
+    _largeImageView.backgroundColor = [UIColor lightGrayColor];
+    _largeImageView.delegate = self;
     [self.view addSubview:_largeImageView];
+    
+    
     //collectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -72,10 +87,11 @@
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.scrollEnabled = YES;
-    
     [self.view addSubview:_collectionView];
     
     [_collectionView registerClass:[ImageFilterCollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
+    
+    [_collectionView reloadData];
     
 }
 
@@ -101,10 +117,6 @@
     ImageFilterCollectionViewCell *cell = [[ImageFilterCollectionViewCell alloc]init];
     cell = [collectionView dequeueReusableCellWithReuseIdentifier:indentifier forIndexPath:indexPath];
     
-    [cell sizeToFit];
-    if (!cell) {
-        NSLog(@"无法创建cell");
-    }
     NSDictionary *dic = [_collectionViewArray objectAtIndex:indexPath.row];
     cell.filterNameLabel.text = dic[@"name"];
     
@@ -136,14 +148,10 @@
     //创建滤镜
     CIFilter *filter = [CIFilter filterWithName:[_collectionViewArray objectAtIndex:indexPath.row][@"filter"] keysAndValues:kCIInputImageKey, ciImage, nil];
     [filter setDefaults];
-    EAGLContext *eaglContext = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    _context = [CIContext contextWithEAGLContext:eaglContext];
     _outputImage = [filter outputImage];
-    [_largeImageView removeFromSuperview];
-    _largeImageView = nil;
-    _largeImageView = [[GLKView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, SCREEN_HEIGHT-200) context:eaglContext];
-    _largeImageView.delegate = self;
-    [self.view addSubview:_largeImageView];
+    [_largeImageView deleteDrawable];
+    _largeImageView.context = _eaglContext;
+    [_largeImageView display];
     
 }
 
@@ -155,14 +163,14 @@
 #pragma mark --GLKViewDelegate
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-
+    
     CGFloat width;
     CGFloat height;
     CGFloat x = 0.0;
     CGFloat y = 0.0;
     CGFloat viewWidth = view.bounds.size.width;
     CGFloat viewHeight = view.bounds.size.height;
-
+    
     if (_originalImage.size.width/_originalImage.size.height>1) {
         width = viewWidth*SCREEN_SCALE;
         height = viewWidth*SCREEN_SCALE*_originalImage.size.height/_originalImage.size.width;
@@ -179,7 +187,7 @@
         [_context drawImage:_outputImage inRect:CGRectMake(x, y, width, height) fromRect:CGRectMake(0, 0, _originalImage.size.width, _originalImage.size.height)];
         
     }
-   
+    
 }
 
 @end
